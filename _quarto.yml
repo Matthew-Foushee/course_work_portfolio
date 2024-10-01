@@ -5,9 +5,9 @@ website:
   title: "Your_Name - Data Science Portfolio"
   favicon: Images/favicon.png
   back-to-top-navigation: true
-  site-url: https://your_rendered_url
-  repo-url: https://github.com/your_github_url
-  issue-url: https://github.com/your_github_url/issues/new
+  site-url: https://byuidatascience.github.io/course_work_portfolio/
+  repo-url: https://github.com/byuidatascience/course_work_portfolio
+  issue-url: https://github.com/byuidatascience/course_work_portfolio/issues/new
   repo-actions: [issue]
 
   page-footer: 
