@@ -35,8 +35,9 @@ _THIS `.qmd` IS INSTRUCTIONAL AND SHOULD `NOT` BE USED TO WRITE YOUR REPORTS (EX
 import pandas as pd
 import numpy as np
 from lets_plot import *
+from palmerpenguins import load_penguins
 
-LetsPlot.setup_html(isolated_frame=True)
+LetsPlot.setup_html(isolated_frame=True, no_js=True)
 ```
 
 
@@ -52,7 +53,7 @@ _A Client has requested this analysis and this is your one shot of what you woul
 # Learn morea about Code Cells: https://quarto.org/docs/reference/cells/cells-jupyter.html
 
 # Include and execute your code here
-df = pd.read_csv("https://raw.githubusercontent.com/byuidatascience/data4python4ds/master/data-raw/mpg/mpg.csv")
+penguins = load_penguins()
 ```
 
 __Highlight the Questions and Tasks__
@@ -86,14 +87,94 @@ __COPY PASTE QUESTION|TASK 2 FROM THE PROJECT HERE__
 - _include figures in chunks and discuss your findings in the figure._
 
 ```{python}
-#| label: Q1-chart
+#| label: Q1-chart2
 #| code-summary: plot example
 #| fig-cap: "My useless chart"
 #| fig-align: center
 # Include and execute your code here
 
 (
-  ggplot(df.head(500), aes(x='displ', y='hwy')) + geom_point()
+    ggplot(data=penguins, mapping=aes(x="flipper_length_mm", y="body_mass_g"))
+    + geom_point()
+)
+```
+
+```{python}
+#| label: Q1-chart3
+#| code-summary: plot example
+#| fig-cap: "My useless chart"
+#| fig-align: center
+# Include and execute your code here
+
+(
+    ggplot(
+        data=penguins,
+        mapping=aes(x="flipper_length_mm", y="body_mass_g", color="species"),
+    )
+    + geom_point()
+)
+```
+
+```{python}
+#| label: Q1-chart4
+#| code-summary: plot example
+#| fig-cap: "My useless chart"
+#| fig-align: center
+# Include and execute your code here
+(
+    ggplot(
+        data=penguins,
+        mapping=aes(x="flipper_length_mm", y="body_mass_g", color="species"),
+    )
+    + geom_point()
+    + geom_smooth(method="lm")
+)
+```
+
+```{python}
+#| label: Q1-chart4
+#| code-summary: plot example
+#| fig-cap: "My useless chart"
+#| fig-align: center
+# Include and execute your code here
+(
+    ggplot(data=penguins, mapping=aes(x="flipper_length_mm", y="body_mass_g"))
+    + geom_point(mapping=aes(color="species"))
+    + geom_smooth(method="lm")
+)
+```
+
+```{python}
+#| label: Q1-chart5
+#| code-summary: plot example
+#| fig-cap: "My useless chart"
+#| fig-align: center
+# Include and execute your code here
+(
+    ggplot(data=penguins, mapping=aes(x="flipper_length_mm", y="body_mass_g"))
+    + geom_point(mapping=aes(color="species", shape="species"))
+    + geom_smooth(method="lm")
+)
+```
+
+```{python}
+#| label: Q1-chart6
+#| code-summary: plot example
+#| fig-cap: "My useless chart"
+#| fig-align: center
+# Include and execute your code here
+(
+    ggplot(data=penguins, mapping=aes(x="flipper_length_mm", y="body_mass_g"))
+    + geom_point(aes(color="species", shape="species"))
+    + geom_smooth(method="lm")
+    + labs(
+        title="Body mass and flipper length",
+        subtitle="Dimensions for Adelie, Chinstrap, and Gentoo Penguins",
+        x="Flipper length (mm)",
+        y="Body mass (g)",
+        color="Species",
+        shape="Species",
+    )
 )
 ```
 
@@ -104,20 +185,30 @@ __COPY PASTE QUESTION|TASK 3 FROM THE PROJECT HERE__
 - _PROVIDE TABLES THAT HELP ADDRESS THE QUESTIONS AND TASKS (IF APPLICABLE)._
 
 ```{python}
-#| label: Q1-table
+#| label: Q1-table1
 #| code-summary: table example
 #| tbl-cap: "table example"
 #| tbl-cap-location: top
 # Include and execute your code here
-mydat = (df.head(1000)
-    .groupby('manufacturer')
-    .sum()
+penguins.head()
+
+```
+
+
+```{python}
+#| label: Q1-table2
+#| code-summary: table example
+#| tbl-cap: "table example"
+#| tbl-cap-location: top
+# Include and execute your code here
+mypenguins = (penguins.head(1000)
+    .groupby('species')
+    .mean()
     .reset_index()
-    .tail(10)
-    .filter(["manufacturer","displ","cty", "hwy"])
+    .filter(["species", "bill_length_mm", "bill_depth_mm", "flipper_length_mm", "body_mass_g"])
 )
 
-display(mydat)
+display(mypenguins)
 
 ```
 
