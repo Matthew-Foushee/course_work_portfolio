@@ -132,7 +132,7 @@ __COPY PASTE QUESTION|TASK 2 FROM THE PROJECT HERE__
 ```
 
 ```{python}
-#| label: Q1-chart4
+#| label: Q1-chart4.2
 #| code-summary: plot example
 #| fig-cap: "My useless chart"
 #| fig-align: center
@@ -203,7 +203,7 @@ penguins.head()
 # Include and execute your code here
 mypenguins = (penguins.head(1000)
     .groupby('species')
-    .mean()
+    .mean(numeric_only=True)
     .reset_index()
     .filter(["species", "bill_length_mm", "bill_depth_mm", "flipper_length_mm", "body_mass_g"])
 )
