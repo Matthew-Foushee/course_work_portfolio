@@ -122,6 +122,20 @@ display(mydat)
 
 ```
 
+## Question|Task 4
+
+__COPY PASTE QUESTION|TASK 3 FROM THE PROJECT HERE__
+
+- _PROVIDE TABLES THAT HELP ADDRESS THE QUESTIONS AND TASKS (IF APPLICABLE)._
+
+```{python}
+#| label: Q4-table
+#| code-summary: table example
+#| tbl-cap: "table example"
+#| tbl-cap-location: top
+# Include and execute your code here
+
+```
 
 Note: Non executing Python `Snippets` include (3) \`\`\` followed by (3) more \`\`\`, each on their own line. These are not single quotes, they are the key left of the number 1 key on the keyboard. The top row can include the language of code that is pasted inbetween the \`\`\`  marks. 
 
