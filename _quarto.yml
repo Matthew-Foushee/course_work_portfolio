@@ -24,7 +24,7 @@ website:
       - text: "Home"
         file: index.qmd
       - text: "DS250 Projects"
-        file: 250_projects.qmds
+        file: 250_projects.qmd
 
   sidebar:
     - title: "DS 250 Projects"
