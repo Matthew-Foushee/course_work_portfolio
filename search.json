@@ -1,54 +1,5 @@
 [
   {
-    "objectID": "Templates/ds250_project_template_clean.html",
-    "href": "Templates/ds250_project_template_clean.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "paste your elevator pitch here A SHORT (4-5 SENTENCES) PARAGRAPH THAT DESCRIBES KEY INSIGHTS TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS.\n\n\nRead and format project data\n# Learn morea about Code Cells: https://quarto.org/docs/reference/cells/cells-jupyter.html\n\n# Include and execute your code here\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks"
-  },
-  {
-    "objectID": "Templates/ds250_project_template_clean.html#elevator-pitch",
-    "href": "Templates/ds250_project_template_clean.html#elevator-pitch",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "paste your elevator pitch here A SHORT (4-5 SENTENCES) PARAGRAPH THAT DESCRIBES KEY INSIGHTS TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS.\n\n\nRead and format project data\n# Learn morea about Code Cells: https://quarto.org/docs/reference/cells/cells-jupyter.html\n\n# Include and execute your code here\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks"
-  },
-  {
-    "objectID": "Templates/ds250_project_template_clean.html#questiontask-1",
-    "href": "Templates/ds250_project_template_clean.html#questiontask-1",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "QUESTION|TASK 1",
-    "text": "QUESTION|TASK 1\nCOPY PASTE QUESTION|TASK 1 FROM THE PROJECT HERE\ntype your results and analysis here\n\n\nRead and format data\n# Include and execute your code here\n\n\ninclude figures in chunks and discuss your findings in the figure.\n\n\nplot example\n# Include and execute your code here\n(\n  ggplot(df.head(200), aes(x='name', y='AK')) + geom_bar(stat='identity')\n)\n\n\n\n   \n       \n       \n       \n   \n   \n          \n   \n   \n\nMy useless chart\n\n\n\n\ntable example\n# Include and execute your code here\nmydat = (df.head(1000)\n    .groupby('year')\n    .sum()\n    .reset_index()\n    .tail(10)\n    .filter([\"year\", \"AK\",\"AR\"])\n)\ndisplay(mydat)\n\n\n\n\n\n\nNot much of a table\n\n\n\nyear\nAK\nAR\n\n\n\n\n96\n2006\n21.0\n183.0\n\n\n97\n2007\n28.0\n153.0\n\n\n98\n2008\n36.0\n212.0\n\n\n99\n2009\n34.0\n179.0\n\n\n100\n2010\n22.0\n196.0\n\n\n101\n2011\n41.0\n148.0\n\n\n102\n2012\n28.0\n140.0\n\n\n103\n2013\n26.0\n134.0\n\n\n104\n2014\n20.0\n114.0\n\n\n105\n2015\n28.0\n121.0"
-  },
-  {
-    "objectID": "Templates/ds250_project_template_clean.html#questiontask-2",
-    "href": "Templates/ds250_project_template_clean.html#questiontask-2",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "QUESTION|TASK 2",
-    "text": "QUESTION|TASK 2\nCOPY PASTE QUESTION|TASK 2 FROM THE PROJECT HERE\ntype your results and analysis here\n\n\nRead and format data\n# Include and execute your code here\n\n\ninclude figures in chunks and discuss your findings in the figure.\n\n\nplot example\n# Include and execute your code here\n# (\n#   ggplot(df.head(200), aes(x='name', y='AK')) + geom_bar(stat='identity')\n# )\n\n\n\n\ntable example\n# Include and execute your code here\n# mydat = df.head(1000)\\\n#     .groupby('year')\\\n#     .sum()\\\n#     .reset_index()\\\n#     .tail(10)\\\n#     .filter([\"year\", \"AK\",\"AR\"])\n\n# display(mydat)"
-  },
-  {
-    "objectID": "Templates/ds250_project_template_clean.html#questiontask-3",
-    "href": "Templates/ds250_project_template_clean.html#questiontask-3",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "QUESTION|TASK 3",
-    "text": "QUESTION|TASK 3\nCOPY PASTE QUESTION|TASK 3 FROM THE PROJECT HERE\ntype your results and analysis here\n\n\nRead and format data\n# Include and execute your code here\n\n\ninclude figures in chunks and discuss your findings in the figure.\n\n\nplot example\n# Include and execute your code here\n# Include and execute your code here\n# (\n#   ggplot(df.head(200), aes(x='name', y='AK')) + geom_bar(stat='identity')\n# )\n\n\n\n\ntable example\n# Include and execute your code here\n# mydat = df.head(1000)\\\n#     .groupby('year')\\\n#     .sum()\\\n#     .reset_index()\\\n#     .tail(10)\\\n#     .filter([\"year\", \"AK\",\"AR\"])\n\n# display(mydat)"
-  },
-  {
-    "objectID": "Templates/ds250_project_template_clean.html#questiontask-4",
-    "href": "Templates/ds250_project_template_clean.html#questiontask-4",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "QUESTION|TASK 4",
-    "text": "QUESTION|TASK 4\nCOPY PASTE QUESTION|TASK 3 FROM THE PROJECT HERE\ntype your results and analysis here\n\n\nRead and format data\n# Include and execute your code here\n\n\ninclude figures in chunks and discuss your findings in the figure.\n\n\nplot example\n# Include and execute your code here\n# Include and execute your code here\n# (\n#   ggplot(df.head(200), aes(x='name', y='AK')) + geom_bar(stat='identity')\n# )\n\n\n\n\ntable example\n# Include and execute your code here\n# mydat = df.head(1000)\\\n#     .groupby('year')\\\n#     .sum()\\\n#     .reset_index()\\\n#     .tail(10)\\\n#     .filter([\"year\", \"AK\",\"AR\"])\n\n# display(mydat)"
-  },
-  {
-    "objectID": "Templates/ds250_project_template_clean.html#questiontask-5",
-    "href": "Templates/ds250_project_template_clean.html#questiontask-5",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "QUESTION|TASK 5",
-    "text": "QUESTION|TASK 5\nCOPY PASTE QUESTION|TASK 3 FROM THE PROJECT HERE\ntype your results and analysis here\n\n\nRead and format data\n# Include and execute your code here\n\n\ninclude figures in chunks and discuss your findings in the figure.\n\n\nplot example\n# Include and execute your code here\n# Include and execute your code here\n# (\n#   ggplot(df.head(200), aes(x='name', y='AK')) + geom_bar(stat='identity')\n# )\n\n\n\n\ntable example\n# Include and execute your code here\n# mydat = df.head(1000)\\\n#     .groupby('year')\\\n#     .sum()\\\n#     .reset_index()\\\n#     .tail(10)\\\n#     .filter([\"year\", \"AK\",\"AR\"])\n\n# display(mydat)"
-  },
-  {
     "objectID": "Templates/DS250_Template.html",
     "href": "Templates/DS250_Template.html",
     "title": "Client Report - [Insert Project Title]",
@@ -91,25 +42,137 @@
     "text": "Question|Task 4\nCOPY PASTE QUESTION|TASK 3 FROM THE PROJECT HERE\n\nPROVIDE TABLES THAT HELP ADDRESS THE QUESTIONS AND TASKS (IF APPLICABLE).\n\n\n\ntable example\n# Include and execute your code here\n\n\nNote: Non executing Python Snippets include (3) ``` followed by (3) more ```, each on their own line. These are not single quotes, they are the key left of the number 1 key on the keyboard. The top row can include the language of code that is pasted inbetween the ``` marks.\nNote: These also work in Slack and it is expected they are used for any code shared in that app. No screen shots allowed."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "about me",
+    "objectID": "Templates/ds250_coding_challenge_template.html",
+    "href": "Templates/ds250_coding_challenge_template.html",
+    "title": "Coding Challenge",
     "section": "",
-    "text": "MarkDown Basics"
+    "text": "Show the code\n# Read in libraries\nimport pandas as pd\nimport numpy as np\nfrom lets_plot import *\n\nLetsPlot.setup_html(isolated_frame=True)\nShow the code\n# Read in the names data\nurl = \"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\"\nnames = pd.read_csv(url)"
   },
   {
-    "objectID": "index.html#title-2-header",
-    "href": "index.html#title-2-header",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics"
+    "objectID": "Templates/ds250_coding_challenge_template.html#question",
+    "href": "Templates/ds250_coding_challenge_template.html#question",
+    "title": "Coding Challenge",
+    "section": "Question #:",
+    "text": "Question #:\n\n[Replace with the text from question #]\n\n\nShow the code\n# Question # Code\n\n\nWhen done with a question, render it to a .html file and upload it for the question. Either re-downolad this template or file -&gt; save as -&gt; a new file name and then replace the text in the question with the new question text."
   },
   {
-    "objectID": "250_Projects/project6.html",
-    "href": "250_Projects/project6.html",
-    "title": "Chaz Clark - Data Science Portfolio",
+    "objectID": "250_projects.html",
+    "href": "250_projects.html",
+    "title": "DS250 Projects",
     "section": "",
-    "text": "Here is a link to my GitHub portfolio: GitHub Portfolio\n\n\n\n\n Back to top"
+    "text": "Project 3 - Late Flights and Missing Data (JSON)\nProject 4 - Can you Predict That?\nProject 5 - The War with StarWars",
+    "crumbs": [
+      "DS250 Projects"
+    ]
+  },
+  {
+    "objectID": "250_projects.html#repo-for-my-projects",
+    "href": "250_projects.html#repo-for-my-projects",
+    "title": "DS250 Projects",
+    "section": "",
+    "text": "Project 3 - Late Flights and Missing Data (JSON)\nProject 4 - Can you Predict That?\nProject 5 - The War with StarWars",
+    "crumbs": [
+      "DS250 Projects"
+    ]
+  },
+  {
+    "objectID": "250_Projects/project5.html",
+    "href": "250_Projects/project5.html",
+    "title": "Client Report - The War with Star Wars",
+    "section": "",
+    "text": "Show the code\nimport pandas as pd \nimport numpy as np\nfrom lets_plot import *\n# add the additional libraries you need to import for ML here\n\nLetsPlot.setup_html(isolated_frame=True)\nShow the code\n# Learn morea about Code Cells: https://quarto.org/docs/reference/cells/cells-jupyter.html\n\n# Include and execute your code here\n\n# import your data here using pandas and the URL",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 5"
+    ]
+  },
+  {
+    "objectID": "250_Projects/project5.html#elevator-pitch",
+    "href": "250_Projects/project5.html#elevator-pitch",
+    "title": "Client Report - The War with Star Wars",
+    "section": "Elevator pitch",
+    "text": "Elevator pitch\nA SHORT (2-3 SENTENCES) PARAGRAPH THAT DESCRIBES KEY INSIGHTS TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS. (Note: this is not a summary of the project, but a summary of the results.)\nA Client has requested this analysis and this is your one shot of what you would say to your boss in a 2 min elevator ride before he takes your report and hands it to the client.",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 5"
+    ]
+  },
+  {
+    "objectID": "250_Projects/project5.html#questiontask-1",
+    "href": "250_Projects/project5.html#questiontask-1",
+    "title": "Client Report - The War with Star Wars",
+    "section": "QUESTION|TASK 1",
+    "text": "QUESTION|TASK 1\nShorten the column names and clean them up for easier use with pandas. Provide a table or list that exemplifies how you fixed the names.\ntype your results and analysis here\n\n\nShow the code\n# Include and execute your code here",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 5"
+    ]
+  },
+  {
+    "objectID": "250_Projects/project5.html#questiontask-2",
+    "href": "250_Projects/project5.html#questiontask-2",
+    "title": "Client Report - The War with Star Wars",
+    "section": "QUESTION|TASK 2",
+    "text": "QUESTION|TASK 2\nClean and format the data so that it can be used in a machine learning model. As you format the data, you should complete each item listed below. In your final report provide example(s) of the reformatted data with a short description of the changes made.\na. Filter the dataset to respondents that have seen at least one film\na. Create a new column that converts the age ranges to a single number. Drop the age range categorical column\na. Create a new column that converts the education groupings to a single number. Drop the school categorical column\na. Create a new column that converts the income ranges to a single number. Drop the income range categorical column\na. Create your target (also known as “y” or “label”) column based on the new income range column\na. One-hot encode all remaining categorical columns\ntype your results and analysis here\n\n\nShow the code\n# Include and execute your code here\n\n\n\n\nShow the code\n# Include and execute your code here\n\n\n\n\nShow the code\n# Include and execute your code here\n\n\n\n\nShow the code\n# Include and execute your code here\n\n\n\n\nShow the code\n# Include and execute your code here\n\n\n\n\nShow the code\n# Include and execute your code here",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 5"
+    ]
+  },
+  {
+    "objectID": "250_Projects/project5.html#questiontask-3",
+    "href": "250_Projects/project5.html#questiontask-3",
+    "title": "Client Report - The War with Star Wars",
+    "section": "QUESTION|TASK 3",
+    "text": "QUESTION|TASK 3\nValidate that the data provided on GitHub lines up with the article by recreating 2 of the visuals from the article.\ntype your results and analysis here\n\n\nShow the code\n# Include and execute your code here\n\n\n\n\nShow the code\n# Include and execute your code here",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 5"
+    ]
+  },
+  {
+    "objectID": "250_Projects/project5.html#questiontask-4",
+    "href": "250_Projects/project5.html#questiontask-4",
+    "title": "Client Report - The War with Star Wars",
+    "section": "QUESTION|TASK 4",
+    "text": "QUESTION|TASK 4\nBuild a machine learning model that predicts whether a person makes more than $50k. Describe your model and report the accuracy.\ntype your results and analysis here\n\n\nShow the code\n# Include and execute your code here",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 5"
+    ]
+  },
+  {
+    "objectID": "250_Projects/project5.html#stretch-questiontask-1",
+    "href": "250_Projects/project5.html#stretch-questiontask-1",
+    "title": "Client Report - The War with Star Wars",
+    "section": "STRETCH QUESTION|TASK 1",
+    "text": "STRETCH QUESTION|TASK 1\nBuild a machine learning model that predicts whether a person makes more than $50k. With accuracy of at least 65%. Describe your model and report the accuracy.\ntype your results and analysis here\n\n\nShow the code\n# Include and execute your code here",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 5"
+    ]
+  },
+  {
+    "objectID": "250_Projects/project5.html#stretch-questiontask-2",
+    "href": "250_Projects/project5.html#stretch-questiontask-2",
+    "title": "Client Report - The War with Star Wars",
+    "section": "STRETCH QUESTION|TASK 2",
+    "text": "STRETCH QUESTION|TASK 2\nValidate the data provided on GitHub lines up with the article by recreating a 3rd visual from the article.\ntype your results and analysis here\n\n\nShow the code\n# Include and execute your code here",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 5"
+    ]
+  },
+  {
+    "objectID": "250_Projects/project5.html#stretch-questiontask-3",
+    "href": "250_Projects/project5.html#stretch-questiontask-3",
+    "title": "Client Report - The War with Star Wars",
+    "section": "STRETCH QUESTION|TASK 3",
+    "text": "STRETCH QUESTION|TASK 3\nCreate a new column that converts the location groupings to a single number. Drop the location categorical column.\ntype your results and analysis here\n\n\nShow the code\n# Include and execute your code here",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 5"
+    ]
   },
   {
     "objectID": "250_Projects/project3.html",
@@ -288,136 +351,73 @@
     ]
   },
   {
-    "objectID": "250_Projects/project5.html",
-    "href": "250_Projects/project5.html",
-    "title": "Client Report - The War with Star Wars",
+    "objectID": "250_Projects/project6.html",
+    "href": "250_Projects/project6.html",
+    "title": "Matthew Foushee - Data Science Portfolio",
     "section": "",
-    "text": "Show the code\nimport pandas as pd \nimport numpy as np\nfrom lets_plot import *\n# add the additional libraries you need to import for ML here\n\nLetsPlot.setup_html(isolated_frame=True)\nShow the code\n# Learn morea about Code Cells: https://quarto.org/docs/reference/cells/cells-jupyter.html\n\n# Include and execute your code here\n\n# import your data here using pandas and the URL",
-    "crumbs": [
-      "DS250 Projects",
-      "Project 5"
-    ]
+    "text": "Here is a link to my GitHub portfolio: GitHub Portfolio\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "250_Projects/project5.html#elevator-pitch",
-    "href": "250_Projects/project5.html#elevator-pitch",
-    "title": "Client Report - The War with Star Wars",
-    "section": "Elevator pitch",
-    "text": "Elevator pitch\nA SHORT (2-3 SENTENCES) PARAGRAPH THAT DESCRIBES KEY INSIGHTS TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS. (Note: this is not a summary of the project, but a summary of the results.)\nA Client has requested this analysis and this is your one shot of what you would say to your boss in a 2 min elevator ride before he takes your report and hands it to the client.",
-    "crumbs": [
-      "DS250 Projects",
-      "Project 5"
-    ]
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "about me",
+    "section": "",
+    "text": "MarkDown Basics"
   },
   {
-    "objectID": "250_Projects/project5.html#questiontask-1",
-    "href": "250_Projects/project5.html#questiontask-1",
-    "title": "Client Report - The War with Star Wars",
+    "objectID": "index.html#title-2-header",
+    "href": "index.html#title-2-header",
+    "title": "about me",
+    "section": "",
+    "text": "MarkDown Basics"
+  },
+  {
+    "objectID": "Templates/ds250_project_template_clean.html",
+    "href": "Templates/ds250_project_template_clean.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "paste your elevator pitch here A SHORT (4-5 SENTENCES) PARAGRAPH THAT DESCRIBES KEY INSIGHTS TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS.\n\n\nRead and format project data\n# Learn morea about Code Cells: https://quarto.org/docs/reference/cells/cells-jupyter.html\n\n# Include and execute your code here\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks"
+  },
+  {
+    "objectID": "Templates/ds250_project_template_clean.html#elevator-pitch",
+    "href": "Templates/ds250_project_template_clean.html#elevator-pitch",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "paste your elevator pitch here A SHORT (4-5 SENTENCES) PARAGRAPH THAT DESCRIBES KEY INSIGHTS TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS.\n\n\nRead and format project data\n# Learn morea about Code Cells: https://quarto.org/docs/reference/cells/cells-jupyter.html\n\n# Include and execute your code here\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks"
+  },
+  {
+    "objectID": "Templates/ds250_project_template_clean.html#questiontask-1",
+    "href": "Templates/ds250_project_template_clean.html#questiontask-1",
+    "title": "Client Report - [Insert Project Title]",
     "section": "QUESTION|TASK 1",
-    "text": "QUESTION|TASK 1\nShorten the column names and clean them up for easier use with pandas. Provide a table or list that exemplifies how you fixed the names.\ntype your results and analysis here\n\n\nShow the code\n# Include and execute your code here",
-    "crumbs": [
-      "DS250 Projects",
-      "Project 5"
-    ]
+    "text": "QUESTION|TASK 1\nCOPY PASTE QUESTION|TASK 1 FROM THE PROJECT HERE\ntype your results and analysis here\n\n\nRead and format data\n# Include and execute your code here\n\n\ninclude figures in chunks and discuss your findings in the figure.\n\n\nplot example\n# Include and execute your code here\n(\n  ggplot(df.head(200), aes(x='name', y='AK')) + geom_bar(stat='identity')\n)\n\n\n\n   \n       \n       \n       \n   \n   \n          \n   \n   \n\nMy useless chart\n\n\n\n\ntable example\n# Include and execute your code here\nmydat = (df.head(1000)\n    .groupby('year')\n    .sum()\n    .reset_index()\n    .tail(10)\n    .filter([\"year\", \"AK\",\"AR\"])\n)\ndisplay(mydat)\n\n\n\n\n\n\nNot much of a table\n\n\n\nyear\nAK\nAR\n\n\n\n\n96\n2006\n21.0\n183.0\n\n\n97\n2007\n28.0\n153.0\n\n\n98\n2008\n36.0\n212.0\n\n\n99\n2009\n34.0\n179.0\n\n\n100\n2010\n22.0\n196.0\n\n\n101\n2011\n41.0\n148.0\n\n\n102\n2012\n28.0\n140.0\n\n\n103\n2013\n26.0\n134.0\n\n\n104\n2014\n20.0\n114.0\n\n\n105\n2015\n28.0\n121.0"
   },
   {
-    "objectID": "250_Projects/project5.html#questiontask-2",
-    "href": "250_Projects/project5.html#questiontask-2",
-    "title": "Client Report - The War with Star Wars",
+    "objectID": "Templates/ds250_project_template_clean.html#questiontask-2",
+    "href": "Templates/ds250_project_template_clean.html#questiontask-2",
+    "title": "Client Report - [Insert Project Title]",
     "section": "QUESTION|TASK 2",
-    "text": "QUESTION|TASK 2\nClean and format the data so that it can be used in a machine learning model. As you format the data, you should complete each item listed below. In your final report provide example(s) of the reformatted data with a short description of the changes made.\na. Filter the dataset to respondents that have seen at least one film\na. Create a new column that converts the age ranges to a single number. Drop the age range categorical column\na. Create a new column that converts the education groupings to a single number. Drop the school categorical column\na. Create a new column that converts the income ranges to a single number. Drop the income range categorical column\na. Create your target (also known as “y” or “label”) column based on the new income range column\na. One-hot encode all remaining categorical columns\ntype your results and analysis here\n\n\nShow the code\n# Include and execute your code here\n\n\n\n\nShow the code\n# Include and execute your code here\n\n\n\n\nShow the code\n# Include and execute your code here\n\n\n\n\nShow the code\n# Include and execute your code here\n\n\n\n\nShow the code\n# Include and execute your code here\n\n\n\n\nShow the code\n# Include and execute your code here",
-    "crumbs": [
-      "DS250 Projects",
-      "Project 5"
-    ]
+    "text": "QUESTION|TASK 2\nCOPY PASTE QUESTION|TASK 2 FROM THE PROJECT HERE\ntype your results and analysis here\n\n\nRead and format data\n# Include and execute your code here\n\n\ninclude figures in chunks and discuss your findings in the figure.\n\n\nplot example\n# Include and execute your code here\n# (\n#   ggplot(df.head(200), aes(x='name', y='AK')) + geom_bar(stat='identity')\n# )\n\n\n\n\ntable example\n# Include and execute your code here\n# mydat = df.head(1000)\\\n#     .groupby('year')\\\n#     .sum()\\\n#     .reset_index()\\\n#     .tail(10)\\\n#     .filter([\"year\", \"AK\",\"AR\"])\n\n# display(mydat)"
   },
   {
-    "objectID": "250_Projects/project5.html#questiontask-3",
-    "href": "250_Projects/project5.html#questiontask-3",
-    "title": "Client Report - The War with Star Wars",
+    "objectID": "Templates/ds250_project_template_clean.html#questiontask-3",
+    "href": "Templates/ds250_project_template_clean.html#questiontask-3",
+    "title": "Client Report - [Insert Project Title]",
     "section": "QUESTION|TASK 3",
-    "text": "QUESTION|TASK 3\nValidate that the data provided on GitHub lines up with the article by recreating 2 of the visuals from the article.\ntype your results and analysis here\n\n\nShow the code\n# Include and execute your code here\n\n\n\n\nShow the code\n# Include and execute your code here",
-    "crumbs": [
-      "DS250 Projects",
-      "Project 5"
-    ]
+    "text": "QUESTION|TASK 3\nCOPY PASTE QUESTION|TASK 3 FROM THE PROJECT HERE\ntype your results and analysis here\n\n\nRead and format data\n# Include and execute your code here\n\n\ninclude figures in chunks and discuss your findings in the figure.\n\n\nplot example\n# Include and execute your code here\n# Include and execute your code here\n# (\n#   ggplot(df.head(200), aes(x='name', y='AK')) + geom_bar(stat='identity')\n# )\n\n\n\n\ntable example\n# Include and execute your code here\n# mydat = df.head(1000)\\\n#     .groupby('year')\\\n#     .sum()\\\n#     .reset_index()\\\n#     .tail(10)\\\n#     .filter([\"year\", \"AK\",\"AR\"])\n\n# display(mydat)"
   },
   {
-    "objectID": "250_Projects/project5.html#questiontask-4",
-    "href": "250_Projects/project5.html#questiontask-4",
-    "title": "Client Report - The War with Star Wars",
+    "objectID": "Templates/ds250_project_template_clean.html#questiontask-4",
+    "href": "Templates/ds250_project_template_clean.html#questiontask-4",
+    "title": "Client Report - [Insert Project Title]",
     "section": "QUESTION|TASK 4",
-    "text": "QUESTION|TASK 4\nBuild a machine learning model that predicts whether a person makes more than $50k. Describe your model and report the accuracy.\ntype your results and analysis here\n\n\nShow the code\n# Include and execute your code here",
-    "crumbs": [
-      "DS250 Projects",
-      "Project 5"
-    ]
+    "text": "QUESTION|TASK 4\nCOPY PASTE QUESTION|TASK 3 FROM THE PROJECT HERE\ntype your results and analysis here\n\n\nRead and format data\n# Include and execute your code here\n\n\ninclude figures in chunks and discuss your findings in the figure.\n\n\nplot example\n# Include and execute your code here\n# Include and execute your code here\n# (\n#   ggplot(df.head(200), aes(x='name', y='AK')) + geom_bar(stat='identity')\n# )\n\n\n\n\ntable example\n# Include and execute your code here\n# mydat = df.head(1000)\\\n#     .groupby('year')\\\n#     .sum()\\\n#     .reset_index()\\\n#     .tail(10)\\\n#     .filter([\"year\", \"AK\",\"AR\"])\n\n# display(mydat)"
   },
   {
-    "objectID": "250_Projects/project5.html#stretch-questiontask-1",
-    "href": "250_Projects/project5.html#stretch-questiontask-1",
-    "title": "Client Report - The War with Star Wars",
-    "section": "STRETCH QUESTION|TASK 1",
-    "text": "STRETCH QUESTION|TASK 1\nBuild a machine learning model that predicts whether a person makes more than $50k. With accuracy of at least 65%. Describe your model and report the accuracy.\ntype your results and analysis here\n\n\nShow the code\n# Include and execute your code here",
-    "crumbs": [
-      "DS250 Projects",
-      "Project 5"
-    ]
-  },
-  {
-    "objectID": "250_Projects/project5.html#stretch-questiontask-2",
-    "href": "250_Projects/project5.html#stretch-questiontask-2",
-    "title": "Client Report - The War with Star Wars",
-    "section": "STRETCH QUESTION|TASK 2",
-    "text": "STRETCH QUESTION|TASK 2\nValidate the data provided on GitHub lines up with the article by recreating a 3rd visual from the article.\ntype your results and analysis here\n\n\nShow the code\n# Include and execute your code here",
-    "crumbs": [
-      "DS250 Projects",
-      "Project 5"
-    ]
-  },
-  {
-    "objectID": "250_Projects/project5.html#stretch-questiontask-3",
-    "href": "250_Projects/project5.html#stretch-questiontask-3",
-    "title": "Client Report - The War with Star Wars",
-    "section": "STRETCH QUESTION|TASK 3",
-    "text": "STRETCH QUESTION|TASK 3\nCreate a new column that converts the location groupings to a single number. Drop the location categorical column.\ntype your results and analysis here\n\n\nShow the code\n# Include and execute your code here",
-    "crumbs": [
-      "DS250 Projects",
-      "Project 5"
-    ]
-  },
-  {
-    "objectID": "250_projects.html",
-    "href": "250_projects.html",
-    "title": "DS250 Projects",
-    "section": "",
-    "text": "Project 3 - Late Flights and Missing Data (JSON)\nProject 4 - Can you Predict That?\nProject 5 - The War with StarWars",
-    "crumbs": [
-      "DS250 Projects"
-    ]
-  },
-  {
-    "objectID": "250_projects.html#repo-for-my-projects",
-    "href": "250_projects.html#repo-for-my-projects",
-    "title": "DS250 Projects",
-    "section": "",
-    "text": "Project 3 - Late Flights and Missing Data (JSON)\nProject 4 - Can you Predict That?\nProject 5 - The War with StarWars",
-    "crumbs": [
-      "DS250 Projects"
-    ]
-  },
-  {
-    "objectID": "Templates/ds250_coding_challenge_template.html",
-    "href": "Templates/ds250_coding_challenge_template.html",
-    "title": "Coding Challenge",
-    "section": "",
-    "text": "Show the code\n# Read in libraries\nimport pandas as pd\nimport numpy as np\nfrom lets_plot import *\n\nLetsPlot.setup_html(isolated_frame=True)\nShow the code\n# Read in the names data\nurl = \"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\"\nnames = pd.read_csv(url)"
-  },
-  {
-    "objectID": "Templates/ds250_coding_challenge_template.html#question",
-    "href": "Templates/ds250_coding_challenge_template.html#question",
-    "title": "Coding Challenge",
-    "section": "Question #:",
-    "text": "Question #:\n\n[Replace with the text from question #]\n\n\nShow the code\n# Question # Code\n\n\nWhen done with a question, render it to a .html file and upload it for the question. Either re-downolad this template or file -&gt; save as -&gt; a new file name and then replace the text in the question with the new question text."
+    "objectID": "Templates/ds250_project_template_clean.html#questiontask-5",
+    "href": "Templates/ds250_project_template_clean.html#questiontask-5",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "QUESTION|TASK 5",
+    "text": "QUESTION|TASK 5\nCOPY PASTE QUESTION|TASK 3 FROM THE PROJECT HERE\ntype your results and analysis here\n\n\nRead and format data\n# Include and execute your code here\n\n\ninclude figures in chunks and discuss your findings in the figure.\n\n\nplot example\n# Include and execute your code here\n# Include and execute your code here\n# (\n#   ggplot(df.head(200), aes(x='name', y='AK')) + geom_bar(stat='identity')\n# )\n\n\n\n\ntable example\n# Include and execute your code here\n# mydat = df.head(1000)\\\n#     .groupby('year')\\\n#     .sum()\\\n#     .reset_index()\\\n#     .tail(10)\\\n#     .filter([\"year\", \"AK\",\"AR\"])\n\n# display(mydat)"
   }
 ]
