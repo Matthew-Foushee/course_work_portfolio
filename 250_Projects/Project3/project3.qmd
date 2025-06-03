@@ -1,0 +1,120 @@
+---
+title: "Client Report - Late Flights & Missing Data (JSON)"
+subtitle: "Course DS 250"
+author: "[STUDENT NAME]"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    title-block-banner: true
+    toc: true
+    toc-depth: 3
+    toc-location: body
+    number-sections: false
+    html-math-method: katex
+    code-fold: true
+    code-summary: "Show the code"
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+        source: false
+        toggle: true
+        caption: See code
+execute: 
+  warning: false
+    
+---
+
+```{python}
+import pandas as pd 
+import numpy as np
+import sqlite3
+from lets_plot import *
+import json
+
+LetsPlot.setup_html(isolated_frame=True)
+```
+
+
+```{python}
+#Location of Json file
+json_file = 'flights_missing.json'
+
+#opening and creating Dataframe from Json file
+json = json.load(open(json_file))
+dataFrame = pd.json_normalize(json)
+```
+
+## QUESTION|TASK 1
+
+__Fix all of the varied missing data types in the data to be consistent (all missing values should be displayed as “NaN”). In your report include one record example (one row) from your new data, in the raw JSON format. Your example should display the “NaN” for at least one missing value.__
+
+Most of all of the data was there however a handful of the values were either empty, containing no value, or already Nan(Null), This code replaces all empty values with NaN to provide the data with more consistency.
+
+```{python}
+#Replacing all empty values with 'NaN'
+dataFrame.replace(['', None], np.nan, inplace=True)
+
+#Showing row number 2 because the airport_name had no value initially.
+dataFrame.iloc[2]
+```
+
+
+## QUESTION|TASK 2
+
+__Which airport has the worst delays? Describe the metric you chose, and why you chose it to determine the “worst” airport. Your answer should include a summary table that lists (for each airport) the total number of flights, total number of delayed flights, proportion of delayed flights, and average delay time in hours.__  
+
+```{python}
+# Include and execute your code here
+
+
+```
+
+
+## QUESTION|TASK 3
+
+__What is the best month to fly if you want to avoid delays of any length? Describe the metric you chose and why you chose it to calculate your answer. Include one chart to help support your answer, with the x-axis ordered by month. (To answer this question, you will need to remove any rows that are missing the Month variable.)__
+
+```{python}
+# Include and execute your code here
+
+```
+
+## QUESTION|TASK 4
+
+__According to the BTS website, the “Weather” category only accounts for severe weather delays. Mild weather delays are not counted in the “Weather” category, but are actually included in both the “NAS” and “Late-Arriving Aircraft” categories. Your job is to create a new column that calculates the total number of flights delayed by weather (both severe and mild). You will need to replace all the missing values in the Late Aircraft variable with the mean. Show your work by printing the first 5 rows of data in a table. Use these three rules for your calculations:__
+    A. 100% of delayed flights in the Weather category are due to weather
+    B. 30% of all delayed flights in the Late-Arriving category are due to weather
+    C. From April to August, 40% of delayed flights in the NAS category are due to weather. The rest of the months, the proportion rises to 65%
+
+
+```{python}
+# Include and execute your code here
+
+```
+
+## QUESTION|TASK 5
+
+__Using the new weather variable calculated above, create a barplot showing the proportion of all flights that are delayed by weather at each airport. Describe what you learn from this graph.__
+
+
+```{python}
+# Include and execute your code here
+
+```
+
+
+---
+
+## STRETCH QUESTION|TASK 1
+
+__Which delay is the worst delay? Create a similar analysis as above for Weahter Delay with: Carrier Delay and Security Delay. Compare the proportion of delay for each of the three categories in a Chart and a Table. Describe your results__  
+
+```{python}
+# Include and execute your code here
+
+
+```
+
+---
+
