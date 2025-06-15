@@ -1,7 +1,7 @@
 ---
 title: "Client Report - Finding Relationships in Baseball"
 subtitle: "Course DS 250"
-author: "[STUDENT NAME]"
+author: "Matthew Foushee"
 format:
   html:
     self-contained: true

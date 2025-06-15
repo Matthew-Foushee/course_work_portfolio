@@ -1,7 +1,7 @@
 ---
 title: "Client Report - Late Flights & Missing Data (JSON)"
 subtitle: "Course DS 250"
-author: "[STUDENT NAME]"
+author: "Matthew Foushee"
 format:
   html:
     self-contained: true
@@ -37,12 +37,20 @@ LetsPlot.setup_html(isolated_frame=True)
 
 
 ```{python}
+import pandas as pd 
+import numpy as np
+import sqlite3
+from lets_plot import *
+import json
+
+LetsPlot.setup_html(isolated_frame=True)
 #Location of Json file
 json_file = 'flights_missing.json'
 
 #opening and creating Dataframe from Json file
 json = json.load(open(json_file))
 dataFrame = pd.json_normalize(json)
+
 ```
 
 ## QUESTION|TASK 1
@@ -64,10 +72,44 @@ dataFrame.iloc[2]
 
 __Which airport has the worst delays? Describe the metric you chose, and why you chose it to determine the “worst” airport. Your answer should include a summary table that lists (for each airport) the total number of flights, total number of delayed flights, proportion of delayed flights, and average delay time in hours.__  
 
+The Worst airport when it comes to delays is the San Francisco International Airport. They on average have a 36 minute delay on each flight.
+
 ```{python}
 # Include and execute your code here
+airportsData = {}
+#Needs
+#Total number of flights
+#Total number of delayed flights
+#proportion of delayted flights
+#average delay time in hours
 
+worstTime = 0
+worstAirport = ""
 
+for row in dataFrame.itertuples(index=False):
+  airportdata = {
+    "numberOfFlights" : row.num_of_flights_total,
+    "numberOfDelayedFlights" : row.num_of_delays_total,
+    "proportionalOnTimeToDelayed" : round(row.num_of_delays_total / row.num_of_flights_total, 3),
+    "AverageDelayTime" : round((row.minutes_delayed_total/60) / row.num_of_flights_total, 3)
+  }
+
+  if(row.airport_name not in airportsData):
+    airportsData[row.airport_name] = airportdata
+    continue
+  else:
+    airportsData[row.airport_name]["numberOfFlights"] += airportdata["numberOfFlights"]
+    airportsData[row.airport_name]["numberOfDelayedFlights"] += airportdata["numberOfDelayedFlights"]
+    airportsData[row.airport_name]["proportionalOnTimeToDelayed"] += airportdata["proportionalOnTimeToDelayed"]
+    airportsData[row.airport_name]["AverageDelayTime"] += airportdata["AverageDelayTime"]
+
+  aiportdelayaverage = (row.minutes_delayed_total/60) / row.num_of_flights_total
+
+  if worstTime < aiportdelayaverage:
+    worstTime = aiportdelayaverage
+    worstAirport = row.airport_name
+
+print(airportsData)
 ```
 
 
@@ -75,10 +117,54 @@ __Which airport has the worst delays? Describe the metric you chose, and why you
 
 __What is the best month to fly if you want to avoid delays of any length? Describe the metric you chose and why you chose it to calculate your answer. Include one chart to help support your answer, with the x-axis ordered by month. (To answer this question, you will need to remove any rows that are missing the Month variable.)__
 
+This chart shows that the best month to fly is in October, it has the lowest delay averages.
+
 ```{python}
 # Include and execute your code here
 
+monthData = []
+for i in range(12):
+  monthData.append({"month": "", "delay": 0})
+
+
+months = {
+    'january': 1,
+    'febuary': 2,
+    'march': 3,
+    'april': 4,
+    'may': 5,
+    'june': 6,
+    'july': 7,
+    'august': 8,
+    'september': 9,
+    'october': 10,
+    'november': 11,
+    'december': 12,
+}
+#Needs
+#Total number of flights
+#Total number of delayed flights
+#proportion of delayted flights
+#average delay time in hours
+
+for row in dataFrame.itertuples(index=False):
+
+  if(row.month == 'n/a'):
+    continue
+  monthDelayAverage = (row.minutes_delayed_total / 60) / row.num_of_flights_total
+  monthData[months[row.month.lower()] - 1]["month"] = row.month
+  monthData[months[row.month.lower()] - 1]["delay"] += monthDelayAverage
+  monthData[months[row.month.lower()] - 1]["delay"] /= 2
+
+
+month_df = pd.DataFrame(monthData)
+(
+ggplot(data=month_df, mapping=aes(x="month", y="delay"))
+  + geom_line()
+)
 ```
+
+
 
 ## QUESTION|TASK 4
 
@@ -87,21 +173,102 @@ __According to the BTS website, the “Weather” category only accounts for sev
     B. 30% of all delayed flights in the Late-Arriving category are due to weather
     C. From April to August, 40% of delayed flights in the NAS category are due to weather. The rest of the months, the proportion rises to 65%
 
-
 ```{python}
-# Include and execute your code here
+import pandas as pd 
+import numpy as np
+import sqlite3
+from lets_plot import *
+import json
 
+LetsPlot.setup_html(isolated_frame=True)
+
+json_file = 'flights_missing.json'
+
+months = {
+    'january': 1,
+    'febuary': 2,
+    'march': 3,
+    'april': 4,
+    'may': 5,
+    'june': 6,
+    'july': 7,
+    'august': 8,
+    'september': 9,
+    'october': 10,
+    'november': 11,
+    'december': 12,
+}
+
+#opening and creating Dataframe from Json file
+json = json.load(open(json_file))
+dataFrame = pd.json_normalize(json)
+
+# Include and execute your code here
+mean_aircraft = 0
+count = 0
+for row in dataFrame.itertuples(index=False):
+  if(row.num_of_delays_late_aircraft < 0):
+    continue
+  else:
+    mean_aircraft += row.num_of_delays_late_aircraft
+    count += 1
+
+mean_aircraft /= count
+mean_aircraft = round(mean_aircraft, 0)
+dataFrame.replace(-999, mean_aircraft, inplace=True)
+
+
+delayedByWeather = []
+dataFrame
+for row in dataFrame.itertuples(index=False):
+  appendNumber = row.minutes_delayed_weather
+  appendNumber += (row.minutes_delayed_late_aircraft * 0.3)
+  if(row.month == 'n/a'):
+    appendNumber += (row.minutes_delayed_nas * 0.65)
+  elif(months[row.month.lower()] >= 4 and months[row.month.lower()] <= 8):
+    appendNumber += (row.minutes_delayed_nas * 0.4)
+  else:
+    appendNumber += (row.minutes_delayed_nas * 0.65)
+  delayedByWeather.append(round(appendNumber, 0))
+dataFrame["minutes_delated_all_weather"] = delayedByWeather
 ```
 
 ## QUESTION|TASK 5
 
 __Using the new weather variable calculated above, create a barplot showing the proportion of all flights that are delayed by weather at each airport. Describe what you learn from this graph.__
 
+The Chicago O'Hare International airport has the MOST delays by weather and SAN and IAD have by far the least
 
 ```{python}
 # Include and execute your code here
+newDataFrame = [
+    {"airport_code": "ATL", "delay_sum": 0, "count": 0},
+    {"airport_code": "DEN", "delay_sum": 0, "count": 0},
+    {"airport_code": "IAD", "delay_sum": 0, "count": 0},
+    {"airport_code": "ORD", "delay_sum": 0, "count": 0},
+    {"airport_code": "SAN", "delay_sum": 0, "count": 0},
+    {"airport_code": "SFO", "delay_sum": 0, "count": 0},
+    {"airport_code": "SLC", "delay_sum": 0, "count": 0}
+]
 
+for row in dataFrame.itertuples(index=False):
+    for item in newDataFrame:
+        if item["airport_code"] == row.airport_code:
+            if pd.isna(row.minutes_delated_all_weather):
+                continue
+            item["delay_sum"] += row.minutes_delated_all_weather
+            item["count"] += 1
+
+for item in newDataFrame:
+    item["delay"] = item["delay_sum"] / item["count"]
+  
+new_df = pd.DataFrame(newDataFrame)
+(
+ggplot(data=new_df, mapping=aes(x="airport_code", y="delay"))
+  + geom_bar(stat="identity")
+)
 ```
+
 
 
 ---
